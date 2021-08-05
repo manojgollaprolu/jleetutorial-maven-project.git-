@@ -1,4 +1,4 @@
 FROM jboss/wildfly
 
-COPY target/*.war /opt/jboss/wildfly/standalone/deployments/
+COPY ./webapp/target/*.war /opt/jboss/wildfly/standalone/deployments/
 
