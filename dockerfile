@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y upgrade
 
 WORKDIR /usr/local/tomcat
 
-COPY webapp.war /usr/local/tomcat/webapps/webapp.war
+ADD webapp.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
