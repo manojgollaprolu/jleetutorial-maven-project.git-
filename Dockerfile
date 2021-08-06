@@ -1,4 +1,4 @@
-FROM tomcat:8.0
+FROM tomcat
 
 MAINTAINER 030394
 
