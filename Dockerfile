@@ -4,9 +4,7 @@ MAINTAINER 030394
 
 RUN apt-get update && apt-get -y upgrade
 
-WORKDIR /usr/local/tomcat
-
-ADD webapp.war /usr/local/tomcat/webapps/
+COPY webapp.war /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
