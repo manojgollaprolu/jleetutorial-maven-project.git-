@@ -6,6 +6,6 @@ RUN apt-get update && apt-get -y upgrade
 
 EXPOSE 8080
 
-COPY ./*war %CATALINA_HOME%\webapps
+COPY ./webapp/target/*war %CATALINA_HOME%\webapps
 
 CMD ["catalina.sh", "run"]
