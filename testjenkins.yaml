@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: testdepl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: testdepl
+        image: 030394/tomcat:tagversion
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-service
+  namespace: default
+spec:
+  selector:
+    app: tomcat
+  type: NodePort
+  ports:
+  - name: tomcat-service
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+    nodePort: 30007 
